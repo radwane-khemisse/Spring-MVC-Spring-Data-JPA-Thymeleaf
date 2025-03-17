@@ -20,24 +20,14 @@ public class HopitalApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		// En utilisant le constructeur par defaut
-		Patient patient = new Patient();
-		patient.setId(null);
-		patient.setName("redone");
-		patient.setDateOfBirth(new Date());
-		patient.setSick(true);
-		patient.setScore(10);
+		patientRepository.save(new Patient(null, "Redone", new Date(), true,45 ));
+		patientRepository.save(new Patient(null, "Redtwo", new Date(), false,70 ));
+		patientRepository.save(new Patient(null, "Redthree", new Date(), true,89 ));
 
-		// En utilisant le constructeur
-		Patient patient2 = new Patient(null, "Hassan", new Date(), true, 100);
 
-		// En utilisons builder
-		Patient patient3 = Patient.builder()
-				.name("karima")
-				.dateOfBirth(new Date())
-				.score(53)
-				.isSick(true)
-				.build();
+
+		
+
 
 
 	}
