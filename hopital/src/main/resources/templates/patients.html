@@ -14,7 +14,7 @@
         <div class="card-body">
             <form method="get" th:action="@{index}">
                 <labe>Keyword</labe>
-                <input type="text" name="keyword" th:value="${keyword}" >
+                <input  type="text" name="keyword" th:value="${keyword}" >
                 <button type="submit" class="btn btn-info">Chercher</button>
             </form>
             <table class="table">
@@ -32,6 +32,9 @@
                     <td th:text="${p.dateOfBirth}"></td>
                     <td th:text="${p.isSick}"></td>
                     <td th:text="${p.score}"></td>
+                    <td>
+                        <a class="btn btn-danger" th:href="@{delete(id=${p.id}, keyword=${keyword}, page=${currentPage})}" onclick="return confirm('Etes vous sure?')">Delete</a>
+                    </td>
                 </tr>
 
                 </thead>
