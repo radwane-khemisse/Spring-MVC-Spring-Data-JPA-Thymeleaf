@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 
-<html lang="eng" xmlns:th="http://www.thymeleaf.org">
+<html lang="eng" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://ultraq.net/thymeleaf/layout"
+      layout:decorate="template1"  >
 <head>
     <meta charset="UTF-8">
     <title>Patients</title>
@@ -9,9 +11,10 @@
 </head>
 
 <body>
+<div layout:fragment="content1">
 <div class="p-4">
     <div class="card">
-        <div class="card-header"> Liste Pateients</div>
+        <div class="card-header">Patients List</div>
         <div class="card-body">
             <form method="get" th:action="@{index}">
                 <labe>Keyword</labe>
@@ -48,6 +51,7 @@
             </ul>
         </div>
     </div>
+</div>
 </div>
 </body>
 </html>
